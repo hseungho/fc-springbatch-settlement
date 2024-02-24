@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/fc_batch_settlement
+    username: root
+    password: root
+    hikari:
+      maximum-pool-size: 5
