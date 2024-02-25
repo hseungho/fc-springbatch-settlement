@@ -13,6 +13,7 @@ data class Product(
     val productName: String,
     val sellerNo: Long,
     val category: Int,
+    @Column(columnDefinition = "char", length = 4)
     val taxType: String? = "TAX",
     val sellPrice: BigDecimal? = BigDecimal.ZERO,
     val supplyPrice: BigDecimal? = BigDecimal.ZERO,

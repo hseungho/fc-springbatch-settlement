@@ -9,14 +9,14 @@ import jakarta.persistence.Id
 import java.math.BigDecimal
 import java.time.ZonedDateTime
 
-@Entity(name = "order")
+@Entity(name = "order_origin")
 data class Order(
     @Id @Column(name = "order_no")
     val id: Long? = null,
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val paidConfirmedAt: ZonedDateTime? = null,
 
-    val paidPgAmountL: BigDecimal? = BigDecimal.ZERO,
+    val paidPgAmount: BigDecimal? = BigDecimal.ZERO,
     val usedMileageAmount: BigDecimal? = BigDecimal.ZERO,
     val couponDiscountAmount: BigDecimal? = BigDecimal.ZERO
 ): BaseEntity()

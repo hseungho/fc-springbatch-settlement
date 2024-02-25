@@ -4,6 +4,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    hibernate:
+      ddl-auto: validate
 
   datasource:
     url: jdbc:mysql://localhost:3307/fc_batch_settlement
@@ -11,3 +13,10 @@ spring:
     password: root
     hikari:
       maximum-pool-size: 5
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    url: jdbc:mysql://localhost:3307/fc_batch_settlement
+    user: root
+    password: root

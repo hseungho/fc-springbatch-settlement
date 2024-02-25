@@ -20,5 +20,5 @@ data class OrderItem(
     val itemDeliveryStatus: Int? = 0,
 
     val purchaseConfirmedAt: ZonedDateTime? = null,
-    val shippedCompletedAt: ZonedDateTime? = null,
+    val shippedCompleteAt: ZonedDateTime? = null,
 ): BaseEntity()

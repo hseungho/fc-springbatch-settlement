@@ -11,6 +11,7 @@ data class Seller (
     val id: Long,
     val sellerName: String,
     val businessNo: Int? = 0,
+    @Column(columnDefinition = "char")
     val sellType: String,
     val bankType: String? = null,
     val accountNo: Int? = null,
