@@ -1,6 +1,5 @@
 package com.hseungho.study.fastcampus.batch.settlement.domain.entity
 
-import com.hseungho.study.fastcampus.batch.settlement.configurer.persistence.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id

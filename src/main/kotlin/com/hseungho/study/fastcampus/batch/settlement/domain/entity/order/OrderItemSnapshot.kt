@@ -1,6 +1,6 @@
 package com.hseungho.study.fastcampus.batch.settlement.domain.entity.order
 
-import com.hseungho.study.fastcampus.batch.settlement.configurer.persistence.BaseEntity
+import com.hseungho.study.fastcampus.batch.settlement.domain.entity.BaseEntity
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

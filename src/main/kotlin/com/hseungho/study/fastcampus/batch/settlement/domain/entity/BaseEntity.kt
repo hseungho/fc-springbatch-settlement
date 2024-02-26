@@ -1,4 +1,4 @@
-package com.hseungho.study.fastcampus.batch.settlement.configurer.persistence
+package com.hseungho.study.fastcampus.batch.settlement.domain.entity
 
 import jakarta.persistence.EntityListeners
 import jakarta.persistence.MappedSuperclass
