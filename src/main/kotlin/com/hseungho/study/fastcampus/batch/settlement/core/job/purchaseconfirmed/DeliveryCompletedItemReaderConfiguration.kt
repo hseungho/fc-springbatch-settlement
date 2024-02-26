@@ -1,7 +1,7 @@
 package com.hseungho.study.fastcampus.batch.settlement.core.job.purchaseconfirmed
 
 import com.hseungho.study.fastcampus.batch.settlement.domain.entity.order.OrderItem
-import com.hseungho.study.fastcampus.batch.settlement.infrastructure.repository.OrderItemRepository
+import com.hseungho.study.fastcampus.batch.settlement.infrastructure.database.repository.OrderItemRepository
 import jakarta.persistence.EntityManager
 import org.springframework.batch.item.database.JpaPagingItemReader
 import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder
@@ -29,14 +29,16 @@ class DeliveryCompletedItemReaderConfiguration(
 
     @Bean
     fun deliveryCompletedJpaItemReader(orderItemRepository: OrderItemRepository): JpaPagingItemReader<OrderItem> {
-
-        val queryProvider = DeliveryCompletedJpaQueryProvider(startDateTime, endDateTime)
-
         return JpaPagingItemReaderBuilder<OrderItem>()
             .name("deliveryCompletedJpaItemReader")
             .entityManagerFactory(entityManager.entityManagerFactory)
-            .queryProvider(queryProvider)
+            .queryProvider(deliveryCompletedJapQueryProvider())
             .pageSize(chunkSize) // TODO : 주입 받는 파리미터로 분리
             .build()
+    }
+
+    @Bean
+    fun deliveryCompletedJapQueryProvider(): DeliveryCompletedJpaQueryProvider {
+        return DeliveryCompletedJpaQueryProvider(startDateTime, endDateTime)
     }
 }

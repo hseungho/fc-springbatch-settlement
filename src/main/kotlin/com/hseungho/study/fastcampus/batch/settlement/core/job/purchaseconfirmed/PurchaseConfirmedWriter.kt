@@ -1,7 +1,7 @@
 package com.hseungho.study.fastcampus.batch.settlement.core.job.purchaseconfirmed
 
 import com.hseungho.study.fastcampus.batch.settlement.domain.entity.order.OrderItem
-import com.hseungho.study.fastcampus.batch.settlement.infrastructure.repository.OrderItemRepository
+import com.hseungho.study.fastcampus.batch.settlement.infrastructure.database.repository.OrderItemRepository
 import org.springframework.batch.item.Chunk
 import org.springframework.batch.item.ItemWriter
 import org.springframework.lang.NonNull

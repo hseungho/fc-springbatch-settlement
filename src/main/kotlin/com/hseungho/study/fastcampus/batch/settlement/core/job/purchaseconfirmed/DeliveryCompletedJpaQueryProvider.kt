@@ -16,7 +16,10 @@ class DeliveryCompletedJpaQueryProvider(
             .createQuery(
                 """
                     select oi from order_item oi
+                    left outer join claim_receipt cr on oi.orderNo = cr.orderNo
                     where oi.shippedCompleteAt between :from and :to
+                    and oi.purchaseConfirmedAt is null
+                    and (cr.orderNo is null or cr.completedAt is not null)
                 """.trimIndent(),
                 OrderItem::class.java
             )
@@ -28,6 +31,5 @@ class DeliveryCompletedJpaQueryProvider(
 
     // 빈을 초기화하고, 초기화 시 검증하는 로직
     override fun afterPropertiesSet() {
-        TODO("Not yet implemented")
     }
 }

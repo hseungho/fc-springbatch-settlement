@@ -1,4 +1,4 @@
-package com.hseungho.study.fastcampus.batch.settlement.infrastructure.repository
+package com.hseungho.study.fastcampus.batch.settlement.infrastructure.database.repository
 
 import com.hseungho.study.fastcampus.batch.settlement.domain.entity.order.OrderItem
 import org.springframework.data.jpa.repository.JpaRepository
